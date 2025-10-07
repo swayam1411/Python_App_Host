@@ -16,7 +16,7 @@ jobs:
     - name: Log in to Railway
       uses: railwayapp/railway-action@v2
       with:
-        railwayToken: ${{ secrets.RAILWAY_TOKEN }}
+        railwayToken: ${{ e55c9eea-f02b-4ff9-aa81-3b6da29ceb1f }}
 
     - name: Deploy
       run: railway up
