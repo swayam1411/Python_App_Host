@@ -4,6 +4,11 @@ import uvicorn
 
 app = FastAPI()
 
+
+@app.get("/")
+def read_hello():
+    return {"Hey"}
+
 @app.get("/hello")
 def read_hello():
     return {"message": "Hello from FastAPI on Railway!"}
