@@ -8,16 +8,14 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    container: ghcr.io/railwayapp/cli:latest
+
+    env:
+      RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
 
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
-
-    - name: Install Railway CLI
-      run: npm install -g railway
-
-    - name: Log in to Railway
-      run: echo "${{ secrets.RAILWAY_TOKEN }}" | railway login
 
     - name: Deploy to Railway
       run: railway up
