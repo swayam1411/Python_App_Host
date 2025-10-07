@@ -9,6 +9,10 @@ app = FastAPI()
 def read_hello():
     return {"Hey"}
 
+@app.get("/hello-abhi")
+def read_hello():
+    return {"Hey, Hello Abhi"}
+
 @app.get("/hello")
 def read_hello():
     return {"message": "Hello from FastAPI on Railway!"}
